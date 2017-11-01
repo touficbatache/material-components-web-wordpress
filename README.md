@@ -1,5 +1,5 @@
 # material-components-web-wordpress
-MDC-WP is a WIP, open-source and simple and beautiful Wordpress theme made with Material Components Web!
+MDC-WP is a WIP, open-source, simple and beautiful Wordpress theme made with Material Components Web!
 
 If you find any bug, don't forget to report it in the issues section. Additionally, if you know how to fix it, feel free to submit a pull request to fix the issue.
 
