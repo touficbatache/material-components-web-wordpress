@@ -65,6 +65,19 @@ function reverse_post_order_pre_get_posts( $query ) {
 
 /*
 	==========================================
+	  Show only posts in search
+	==========================================
+*/
+add_filter('pre_get_posts','SearchFilter');
+function SearchFilter($query) {
+	if ($query->is_search) {
+		$query->set('post_type', 'post');
+	}
+	return $query;
+}
+
+/*
+	==========================================
 	  Theme support function
 	==========================================
 */
