@@ -48,7 +48,7 @@ Sooo, wanna look at the source code? Hmm?
 					</form>
 				</div>
 			</section>
-			<section class="mdc-toolbar__section mdc-toolbar__section--align-end">
+			<section class="mdc-toolbar__section mdc-toolbar__section--align-end mat-toolbar__section--end-icons">
 				<a class="material-icons mdc-toolbar__icon mat-search--mobile mat-toolbar--open-search" aria-label="Search" alt="Search"><div class="mdc-icon-toggle mat-ripple-effect" data-mdc-auto-init="MDCRipple" data-mdc-ripple-is-unbounded></div>search</a>
 				<?php $menu_right = wp_nav_menu(array('echo'=>false, 'fallback_cb'=>'__return_false', 'theme_location'=>'menutopright')); if ( ! empty ($menu_right)) {echo '<a class="material-icons mdc-toolbar__icon mat-toolbar--open-menu" aria-label="More options" alt="More options"><div class="mdc-icon-toggle mat-ripple-effect" data-mdc-auto-init="MDCRipple" data-mdc-ripple-is-unbounded></div>more_vert</a><div class="mdc-simple-menu mdc-simple-menu--open-from-top-right" style="min-width: 170px;" tabindex="-1" id="mdc-simple-menu"><ul class="mdc-simple-menu__items mdc-list" role="menu" aria-hidden="true" style="width: 100%;">'; wp_nav_menu(array('theme_location'=>'menutopright', 'items_wrap' => '%3$s', 'walker'=>new Walker_mdcwp_menu())); echo '</ul></div>';} ?>
 			</section>
