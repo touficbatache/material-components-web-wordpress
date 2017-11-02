@@ -387,21 +387,7 @@
 	.mat-toolbar__row--tab-bar {
 		padding: 0;
 		min-height: 48px;
-		z-index: 4;
-	}
-	.mat-tab-bar--fade-start {
-		opacity: 0;
-		transform: translateY(-10px);
-		
-		-webkit-transition: all 0.3s;
-		transition: all 0.3s;
-	}
-	.mat-tab-bar--fade-end {
-		opacity: 1;
-		transform: translateY(0px);
-
-		-webkit-transition: all 0.3s;
-		transition: all 0.3s;
+		transition: margin 300ms;
 	}
 	
 	/*
@@ -429,4 +415,22 @@
 	.mdcwp--immersive-mode main {
 		position: sticky;
 		padding-top: 12rem;
+	}
+	
+	/*
+		==============================
+		  Content
+		==============================
+	*/
+	.mat-toolbar-adjust {
+		transition: margin 300ms;
+	}
+	
+	/*
+		==============================
+		  Margin Animation
+		==============================
+	*/
+	.mat-margin-animation {
+		margin-top: -48px;
 	}

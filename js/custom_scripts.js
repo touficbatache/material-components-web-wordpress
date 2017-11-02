@@ -10,7 +10,7 @@ window.onload = function() {
 
 function adjustToolbar() {
 	if(document.querySelector('.mat-toolbar-adjust')) {
-		document.querySelector('.mat-toolbar-adjust').style = "padding-top: calc(" + document.querySelector('.mdc-toolbar').clientHeight + "px + 24px); padding-right: 16px; padding-left: 16px;";
+		document.querySelector('.mat-toolbar-adjust').style = "padding-top: " + (parseInt(document.querySelector('.mdc-toolbar').clientHeight) + 24) + "px; padding-right: 16px; padding-left: 16px;";
 	}
 }
 	
@@ -41,28 +41,24 @@ if (document.querySelector('.mat-toolbar--open-search') && document.querySelecto
 		document.querySelector('.mat-toolbar--search-container').style = "animation: mat-toolbar--open-search 0.7s forwards; -webkit-transform: translateZ(0);";
 		document.querySelector('.mat-toolbar--search-text').focus();
 		if(document.querySelector('.mat-toolbar__row--tab-bar')){
-			document.querySelector('.mat-toolbar__row--tab-bar').classList.add('mat-tab-bar--fade-start');
+			document.querySelector('.mat-toolbar__row--tab-bar').classList.add('mat-margin-animation');
+			if(document.querySelector('.mat-toolbar-adjust')){document.querySelector('.mat-toolbar-adjust').classList.add('mat-margin-animation')};
 			setTimeout(function() {
-				document.querySelector('.mat-toolbar__row--tab-bar').style = "display: none";
+				document.querySelector('.mat-toolbar__row--tab-bar').style.cssText += "display: none";
 			}, 300);
 		}
-		adjustToolbar();
 	});
 	document.querySelector('.mat-toolbar--exit-search').addEventListener('click', function() {
 		document.querySelector('.mat-toolbar--search-container').style = "animation: mat-toolbar--close-search 0.5s forwards; -webkit-transform: translateZ(0);";
 		setTimeout(function() {document.querySelector('.mat-toolbar--search').style = "visibility: hidden; --mat-toolbar--search-location: " + (document.body.clientWidth - searchIcon.offsetLeft - 20) + "px;";}, 500);
 		document.querySelector('.mat-toolbar--search-text').value = '';
 		if(document.querySelector('.mat-toolbar__row--tab-bar')){
-			document.querySelector('.mat-toolbar__row--tab-bar').style = "display: block";
+			document.querySelector('.mat-toolbar__row--tab-bar').style = "display: block;";
 			setTimeout(function() {
-				document.querySelector('.mat-toolbar__row--tab-bar').classList.add('mat-tab-bar--fade-end');
-				setTimeout(function() {
-					document.querySelector('.mat-toolbar__row--tab-bar').classList.remove('mat-tab-bar--fade-start');
-					document.querySelector('.mat-toolbar__row--tab-bar').classList.remove('mat-tab-bar--fade-end');
-				}, 300);
-			}, 90);
+				document.querySelector('.mat-toolbar__row--tab-bar').classList.remove('mat-margin-animation');
+				if(document.querySelector('.mat-toolbar-adjust')){document.querySelector('.mat-toolbar-adjust').classList.remove('mat-margin-animation')};
+			}, 100);
 		}
-		adjustToolbar();
 	});
 }
 
