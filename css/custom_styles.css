@@ -285,7 +285,7 @@
 	.logged-in .mdc-toolbar {
 		top: 32px;
 	}
-	@media only screen and (max-device-width: 480px) {
+	@media only screen and (max-device-width: 782px) {
 		.logged-in .mdc-toolbar {
 			top: 46px;
 		}
