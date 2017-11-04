@@ -17,5 +17,5 @@
 <br>
 
 <?php
-	if ( comments_open() ) { comments_template(); } else { echo '<h5 class="text-center">Sorry, comments are closed!</h5>'; }
+	if ( comments_open() || '0' != get_comments_number() ) { comments_template(); }
 ?>
