@@ -122,17 +122,17 @@
 	.mat-search--desktop::after {
     	background-color: rgba(255, 255, 255, .05);
 	}
-	@media only screen and (max-width: 750px) {
+	@media only screen and (max-width: 782px) {
 		.mat-search--desktop {
 			display: none;
 		}
-                .mat-toolbar__section--end-icons {
-                    -webkit-box-flex: 0;
-                    -ms-flex: none;
-                    flex: none;
+		.mat-toolbar__section--end-icons {
+			-webkit-box-flex: 0;
+			-ms-flex: none;
+			flex: none;
 		}
 	}
-	@media only screen and (min-width : 750px) {
+	@media only screen and (min-width : 782px) {
 		.mat-search--mobile {
 			display: none;
 		}
@@ -307,7 +307,16 @@
 		background-size: cover;
 	}
 	.mdcwp-ribbon__content {
-		padding: 20px 30px;
+		padding: 24px 32px;
+	}
+	@media only screen and (max-width : 782px) {
+		.mdcwp-ribbon__content {
+			padding: 16px 16px 0;
+		}
+		.mdc-card__supporting-text * {
+			padding-left: 0;
+			padding-right: 0;
+		}
 	}
 	.mdcwp-ribbon__card {
 		margin-top: -6.5rem;
