@@ -6,6 +6,9 @@ window.onload = function() {
 	// Don't show the body unless everything is loaded
 	document.body.style = "visibility: visible;";
 	document.querySelector('.mdcwp-progressbar').style = "display: none;";
+	if(document.getElementsByClassName('mdcwp-404')) {
+		document.body.style.cssText += "display: flex; flex-direction: column;";
+	}
 }
 
 function adjustToolbar() {
