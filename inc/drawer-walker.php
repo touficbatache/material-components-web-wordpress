@@ -12,13 +12,16 @@ class Walker_mdcwp_drawer extends Walker_Nav_menu {
 
 		$classes = empty( $item->classes ) ? array() : (array) $item->classes;
 		$classes[] = 'menu-item-' . $item->ID;
+		
+		$item->icon = get_post_meta($item->ID, '_menu_item_field_icon', true);
 
 		$class_names = join( ' ', apply_filters( 'nav_menu_css_class', array_filter( $classes ), $item, $args ) );
 
 		if ( in_array( 'current-menu-item', $classes ) )
 				$class_names .= ' mdc-temporary-drawer--selected';
 
-		$class_names = $class_names ? ' style="padding: 0 32px;" class="mdc-list-item ' . esc_attr( $class_names ) . '"' : '';
+		if($item->icon == '') {$stylings = "style='padding: 0 32px;'";} else {$stylings = "";}
+		$class_names = $class_names ? $stylings . ' class="mdc-list-item ' . esc_attr( $class_names ) . '"' : '';
 
 		$id = apply_filters( 'nav_menu_item_id', 'menu-item-'. $item->ID, $item, $args );
 		$id = $id ? ' id="' . esc_attr( $id ) . '"' : '';
@@ -33,6 +36,9 @@ class Walker_mdcwp_drawer extends Walker_Nav_menu {
 
 		$item_output = $args->before;
 		$item_output .= '<a'. $attributes .'>';
+		if($item->icon !== '') {
+			$item_output .= '<i class="material-icons mdc-list-item__start-detail" aria-hidden="true">' . $item->icon . '</i>';
+		}
 		$item_output .= $args->link_before . apply_filters( 'the_title', $item->title, $item->ID ) . $args->link_after;
 		$item_output .= '</a>';
 		$item_output .= $args->after;
