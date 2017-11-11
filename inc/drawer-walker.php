@@ -13,7 +13,7 @@ class Walker_mdcwp_drawer extends Walker_Nav_menu {
 		$classes = empty( $item->classes ) ? array() : (array) $item->classes;
 		$classes[] = 'menu-item-' . $item->ID;
 		
-		$item->icon = get_post_meta($item->ID, '_menu_item_field_icon', true);
+		$item->icon = get_post_meta($item->ID, 'menu-item-field_icon', true);
 
 		$class_names = join( ' ', apply_filters( 'nav_menu_css_class', array_filter( $classes ), $item, $args ) );
 
@@ -33,6 +33,7 @@ class Walker_mdcwp_drawer extends Walker_Nav_menu {
 		$attributes .= ! empty( $item->xfn )        ? ' rel="'    . esc_attr( $item->xfn        ) .'"' : '';
 		$attributes .= ! empty( $item->url )        ? ' href="'   . esc_attr( $item->url        ) .'"' : '';
 		$attributes .= $class_names;
+		$attributes .= ' data-mdc-auto-init="MDCRipple"';
 
 		$item_output = $args->before;
 		$item_output .= '<a'. $attributes .'>';
