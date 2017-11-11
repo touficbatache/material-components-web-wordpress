@@ -6,12 +6,12 @@
 */
 function mdcwp_enqueue() {
 	//css
-	wp_enqueue_style('materialstyle', get_template_directory_uri() . '/css/material-components-web.min.css', array(), '0.13.0', 'all');
+	wp_enqueue_style('materialstyle', get_template_directory_uri() . '/css/material-components-web.min.css', array(), '0.24.0', 'all');
 	wp_enqueue_style('materialicons', 'https://fonts.googleapis.com/icon?family=Material+Icons', array(), '1.0', 'all');
 	wp_enqueue_style('robotofont', 'https://fonts.googleapis.com/css?family=Roboto:300,400,500', array(), '1.0', 'all');
 	wp_enqueue_style('customstyles', get_template_directory_uri() . '/css/custom_styles.css', array(), '1.0', 'all');
 	//js
-	wp_enqueue_script('materialjs', get_template_directory_uri() . '/js/material-components-web.min.js', array(), '0.13.0', true);
+	wp_enqueue_script('materialjs', get_template_directory_uri() . '/js/material-components-web.min.js', array(), '0.24.0', true);
 	wp_enqueue_script('customscripts', get_template_directory_uri() . '/js/custom_scripts.js', array(), '1.0', true);
 	echo('<meta name="viewport" content="width=device-width,initial-scale=1">');
 	
