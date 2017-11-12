@@ -332,26 +332,8 @@ add_action( 'wp_update_nav_menu_item', 'mdcwp_save', 10, 3 );
 function mdcwp_filter_walker( $walker ) {
     $walker = 'MDCWP_Walker_Edit';
     if ( ! class_exists( $walker ) ) {
-        require_once dirname( __FILE__ ) . '/config/walker-nav-menu-edit.php';
+        require_once dirname( __FILE__ ) . '/inc/walker-nav-menu-edit.php';
     }
     return $walker;
 }
 add_filter( 'wp_edit_nav_menu_walker', 'mdcwp_filter_walker', 99 );
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
