@@ -516,3 +516,15 @@
 	.mat-margin-animation {
 		margin-top: -48px;
 	}
+	
+	/*
+		==============================
+		  External links
+		==============================
+	*/
+	.mdcwp--link-external[href^="//"]:after, 
+	.mdcwp--link-external[href^="http://"]:after, 
+	.mdcwp--link-external[href^="https://"]:after {
+    	content: " \e895";
+    	font-family: 'Material Icons';
+	}
