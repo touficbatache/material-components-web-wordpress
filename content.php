@@ -8,6 +8,8 @@
 	</section>
 	<?php } ?>
 
+	<?php if (has_post_thumbnail()) { ?><section class="mdc-card__media mdcwp-card__16-9-media" style="background-image: url(<?php the_post_thumbnail_url(); ?>);"></section><?php } ?>
+	
 	<section class="mdc-card__primary">
 		<?php the_title( sprintf('<h1 class="mdc-card__title mdc-card__title--large"><a href="%s" style="text-decoration: none; color: var(--mdc-theme-primary, #3f51b5);">', esc_url( get_permalink() ) ),'</a></h1>' ); ?>
 	</section>
